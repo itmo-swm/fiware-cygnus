@@ -1,0 +1,20 @@
+version: '2'
+services:
+  cygnus-ngsi:
+    build: .
+    ports:
+     - "5050:5050"
+     - "8081:8081"
+    tty: true
+    volumes:
+     - ./agent_mongo.conf:/usr/cygnus/conf/agent_mongo.conf:ro
+     - ./cygnus_instance_mongo.conf:/usr/cygnus/conf/cygnus_instance_mongo.conf:ro
+  mongo:
+    image: 'bitnami/mongodb:latest'
+    #environment:
+    # - MONGODB_ROOT_PASSWORD=mypass
+    ports:
+     - "27017:27017"
+    volumes:
+     - "./db/mongo/:/bitnami/mongodb/"
+

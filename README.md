@@ -12,7 +12,7 @@ docker-compose up -d
 ```
 ## <a name="subscribe"/> Subscribe
 
-To add subscribe for TempTest1 temperature:
+To add subscribe for temperature of TempTest1:
 
 ```bash
 (curl 192.168.1.199:1026/v1/subscribeContext -s -S --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'Fiware-Service: my_test' --header 'Fiware-ServicePath: /' -d @- | python -mjson.tool) <<EOF

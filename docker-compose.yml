@@ -1,6 +1,7 @@
 version: '2'
 services:
   cygnus-ngsi:
+    restart: always
     build: .
     ports:
      - "5050:5050"

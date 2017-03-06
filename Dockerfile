@@ -29,6 +29,6 @@ RUN yum install -y epel-release && yum update -y && \
 
 EXPOSE 5050 8081 
 #ENTRYPOINT service cygnus start && tail -f /var/log/cygnus/cygnus.log
-ENTRYPOINT /usr/cygnus/bin/cygnus-flume-ng agent --conf /usr/cygnus/conf -f /usr/cygnus/conf/agent_mongo.conf -n cygnusagent -Dflume.root.logger=INFO,console -Duser.timezone=UTC && tail -f /var/log/cygnus/cygnus.log
+ENTRYPOINT sleep 10 && /usr/cygnus/bin/cygnus-flume-ng agent --conf /usr/cygnus/conf -f /usr/cygnus/conf/agent_mongo.conf -n cygnusagent -Dflume.root.logger=INFO,console -Duser.timezone=UTC && tail -f /var/log/cygnus/cygnus.log
 
 

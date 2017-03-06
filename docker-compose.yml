@@ -10,11 +10,21 @@ services:
      - ./agent_mongo.conf:/usr/cygnus/conf/agent_mongo.conf:ro
      - ./cygnus_instance_mongo.conf:/usr/cygnus/conf/cygnus_instance_mongo.conf:ro
   mongo:
-    image: 'bitnami/mongodb:latest'
-    #environment:
-    # - MONGODB_ROOT_PASSWORD=mypass
+    image: 'bitnami/mongodb'
+    restart: always
     ports:
-     - "27017:27017"
+      - "27017:27017"
     volumes:
-     - "./db/mongo/:/bitnami/mongodb/"
-
+      - "./db/mongo/:/bitnami/mongodb/"
+  #postgreSQL:
+     #restart: always
+     #image: sameersbn/postgresql
+     #ports:
+      #- "5432:5432"
+     #environment:
+      #- DEBUG=true
+      #- DB_USER=root
+      #- DB_PASS=password
+      #- DB_NAME=postgres
+     #volumes:
+      #- "./db/postgresql/:/var/lib/postgresql/"

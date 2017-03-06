@@ -1,7 +1,7 @@
 # fiware-cygnus
 
 ## <a name="config"/> Config
-To edit address of mongodb, modify agent_mongo.conf file
+To edit address of mongodb, modify [agent_mongo.con](agent_mongo.conf) file
 
 ## <a name="running"/> Running
 
